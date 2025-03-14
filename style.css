@@ -1,0 +1,170 @@
+/* Umumiy o'zgarishlar */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Ekranda yuqoriga joylashgan */
+    align-items: center;
+    height: 100vh;
+    background: url('background.jpg') no-repeat center center/cover;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0;
+    padding-top: 60px; /* Navbar balandligi */
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+}
+
+/* Navbar uchun */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Qoramtir fon */
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    height: 40px; /* Navbar balandligi */
+    cursor: pointer;
+}
+
+.nav-title {
+    font-size: 12px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Elementlar orasida joylashish */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Til o'zgarishi tugmalarining joylashuvi */
+.language-switch {
+    display: flex;
+    width: 300px;
+    height: 40px;
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.language-switch button {
+    width: 50%;
+    height: 100%;
+    font-size: 16px;
+    border: none;
+    background: #1abc9c;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s;
+    border-radius: 10px 10px 0 0;
+}
+
+.language-switch button:hover {
+    background: #16a085;
+}
+
+/* Flashcard dizayni */
+.flashcard {
+    width: 300px;
+    height: 200px;
+    perspective: 1000px;
+    cursor: pointer;
+    position: relative;
+    transform-style: preserve-3d;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    opacity: 0.9;
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flashcard div {
+    width: 87%;
+    height: 80%;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    transition: transform 0.6s ease-in-out;
+    transform-style: preserve-3d;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.front, .back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.front { 
+    background: #3498db; 
+    color: white; 
+}
+.back { 
+    background: #2ecc71; 
+    color: white; 
+    transform: rotateY(180deg); 
+}
+
+.flipped .front { 
+    transform: rotateY(180deg); 
+}
+.flipped .back { 
+    transform: rotateY(0deg); 
+}
+
+/* Button dizayni */
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    background: #e67e22;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+    margin-top: 30px;
+    position: relative;
+    z-index: 2;
+}
+
+button:hover {
+    background: #d35400;
+}
+
+/* Footer dizayni */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    position: relative;
+    bottom: -30px;
+    width: 90%;
+    z-index: 1;
+}
